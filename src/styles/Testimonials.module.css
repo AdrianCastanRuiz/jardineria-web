@@ -1,0 +1,4 @@
+.list{grid-template-columns:repeat(2,1fr)}
+.item{padding:18px;border-radius:16px;border:1px solid #1f2524;background:rgba(255,255,255,.02)}
+.who{color:var(--muted);font-weight:600;margin-top:8px}
+@media (max-width: 900px){ .list{grid-template-columns:1fr} }

@@ -1,0 +1,2 @@
+.root{display:inline-flex;gap:8px;align-items:center}
+.select{padding:8px 10px;border-radius:10px;background:#0c0f0f;border:1px solid #1f2524;color:var(--text)}

@@ -1,0 +1,10 @@
+.wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.form{display:grid;gap:12px}
+.control{display:grid;gap:8px}
+.input,.textarea{
+  padding:12px 14px;border-radius:12px;background:#0c0f0f;border:1px solid #1f2524;color:var(--text);
+}
+.textarea{min-height:120px;resize:vertical}
+.aside{border:1px solid #1f2524;border-radius:16px;padding:18px;background:rgba(255,255,255,.02)}
+.label{font-weight:700}
+@media (max-width: 900px){ .wrap{grid-template-columns:1fr} }

@@ -1,0 +1,129 @@
+.root{}
+.inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
+  gap:16px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+.brandLogo{
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  display:grid;
+  place-items:center;
+  color:#0b1210;
+  font-weight:900;
+}
+.nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.link{
+  color:var(--muted);
+  font-weight:600;
+}
+.link:hover{ color:var(--text); }
+.spacer{ flex:1; }
+.lang{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.menu{ display:none; }
+
+/* =========================
+   Navegación móvil (sheet)
+   ========================= */
+.mobileNav{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+  z-index: 40;
+}
+.mobileNav.open{
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* Fondo opaco (sin transparencia ni blur) */
+.backdrop{
+  position: absolute;
+  inset: 0;
+  background: var(--bg); /* p.ej. #0e1111 */
+}
+
+/* Panel lateral */
+.sheet{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  background: rgb(24, 31, 24);
+  /* border-left: 1px solid #1f2524; */
+  border-radius: 5%;
+  box-shadow: var(--shadow);
+  transform: translateX(100%);
+  transition: transform .25s ease;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 16px;
+  padding: 18px;
+}
+.mobileNav.open .sheet{
+  transform: translateX(0);
+}
+
+/* Enlaces del panel (opacos) */
+.sheetLinks{
+  display: grid;
+  gap: 12px;
+  padding-top: 18px;
+}
+.mlink{
+  display: block;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--card);           /* opaco */
+  border: 1px solid #1f2524;
+  font-weight: 700;
+}
+.mlink:hover{
+  background: #101414;               /* también opaco */
+}
+
+.sheetFooter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #1f2524;
+  padding-top: 12px;
+}
+.closeGhost{
+  background: transparent;
+  border: 1px solid #2b3433;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 860px){
+  .nav{ display:none; }
+  .menu{ display:inline-flex; }
+}
