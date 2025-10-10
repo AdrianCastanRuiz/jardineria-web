@@ -1,5 +1,58 @@
-.grid{grid-template-columns:repeat(3,1fr)}
-.item{padding:18px;border-radius:16px;border:1px solid #1f2524;background:rgba(255,255,255,.02)}
-.item h3{margin:6px 0 8px}
-.item p{color:var(--muted)}
-@media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+.grid{
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 4vw, 28px);
+}
+
+/* El <Link> que envuelve la tarjeta */
+.cardLink{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px; /* hace que el foco y el hover envuelvan toda la tarjeta */
+  outline: none;
+}
+
+.item{
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid #1f2524;
+  background: rgba(255,255,255,.02);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+  cursor: pointer;
+  height: 15rem;
+}
+
+.item h3{ margin: 6px 0 8px; }
+.item p{ color: var(--muted); }
+
+/* Hover y enfoque accesible */
+.item:hover,
+.cardLink:focus-visible .item{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.25);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+
+/* Anillo de enfoque sobre el enlace completo (teclado) */
+.cardLink:focus-visible{
+  box-shadow: 0 0 0 3px rgba(255,255,255,.28);
+}
+
+/* Evita “pegarse” cuando se hace click */
+.item:active{
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+  .item{height: auto;
+
+  }
+}
+
+/* Respeta preferencias del usuario */
+@media (prefers-reduced-motion: reduce){
+  .item{ transition: none; }
+}

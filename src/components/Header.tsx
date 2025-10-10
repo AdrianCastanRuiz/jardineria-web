@@ -1,65 +1,50 @@
+// Header.tsx
 import React, { useEffect, useRef, useState } from 'react'
 import s from '@styles/Header.module.css'
 import { useI18n } from '@i18n/I18nContext'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { Link } from 'react-router-dom' // <— OJO: desde react-router-dom
 
 export const Header: React.FC = () => {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
   const sheetRef = useRef<HTMLDivElement | null>(null)
 
-  // Cerrar con Escape
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false)
-    }
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [])
 
-  // Cerrar al clicar fuera del panel
   useEffect(() => {
     if (!open) return
     const onClick = (e: MouseEvent) => {
-      if (sheetRef.current && !sheetRef.current.contains(e.target as Node)) {
-        setOpen(false)
-      }
+      if (sheetRef.current && !sheetRef.current.contains(e.target as Node)) setOpen(false)
     }
     document.addEventListener('mousedown', onClick)
     return () => document.removeEventListener('mousedown', onClick)
   }, [open])
 
-  const closeAndGo = (hash: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    setOpen(false)
-    const target = document.querySelector(hash)
-    if (target) target.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <header className={`sticky ${s.root}`}>
       <div className={`container ${s.inner}`}>
-        <a className={s.brand} href="#">
+        <Link className={s.brand} to="/">
           <span className={s.brandLogo}>V</span>
           <span>{t('brand')}</span>
-        </a>
+        </Link>
 
         {/* Nav desktop */}
         <nav className={s.nav} aria-label="primary">
-          <a className={s.link} href="#services">{t('nav.services')}</a>
-          <a className={s.link} href="#gallery">{t('nav.gallery')}</a>
-          <a className={s.link} href="#testimonials">{t('nav.testimonials')}</a>
-          <a className={s.link} href="#contact">{t('nav.contact')}</a>
+          <Link className={s.link} to="/#services">{t('nav.services')}</Link>
+          <Link className={s.link} to="/#gallery">{t('nav.gallery')}</Link>
+          <Link className={s.link} to="/#testimonials">{t('nav.testimonials')}</Link>
+          <Link className={s.link} to="/#contact">{t('nav.contact')}</Link>
         </nav>
 
         <div className={s.spacer} />
 
-        {/* Idioma siempre visible */}
-        <div className={s.lang}>
-          <LanguageSwitcher />
-        </div>
+        <div className={s.lang}><LanguageSwitcher /></div>
 
-        {/* Botón menú móvil */}
         <button
           className={`btn ${s.menu}`}
           aria-controls="mobile-nav"
@@ -76,10 +61,10 @@ export const Header: React.FC = () => {
         <div className={s.backdrop} onClick={() => setOpen(false)} />
         <div className={s.sheet} id="mobile-nav" ref={sheetRef} role="dialog" aria-modal="true" aria-label="Navegació mòbil">
           <nav className={s.sheetLinks} aria-label="mobile">
-            <a className={s.mlink} href="#services" onClick={closeAndGo('#services')}>{t('nav.services')}</a>
-            <a className={s.mlink} href="#gallery" onClick={closeAndGo('#gallery')}>{t('nav.gallery')}</a>
-            <a className={s.mlink} href="#testimonials" onClick={closeAndGo('#testimonials')}>{t('nav.testimonials')}</a>
-            <a className={s.mlink} href="#contact" onClick={closeAndGo('#contact')}>{t('nav.contact')}</a>
+            <Link className={s.mlink} to="/#services" onClick={() => setOpen(false)}>{t('nav.services')}</Link>
+            <Link className={s.mlink} to="/#gallery" onClick={() => setOpen(false)}>{t('nav.gallery')}</Link>
+            <Link className={s.mlink} to="/#testimonials" onClick={() => setOpen(false)}>{t('nav.testimonials')}</Link>
+            <Link className={s.mlink} to="/#contact" onClick={() => setOpen(false)}>{t('nav.contact')}</Link>
           </nav>
           <div className={s.sheetFooter}>
             <LanguageSwitcher />
