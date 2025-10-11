@@ -19,7 +19,7 @@
   background: rgba(255,255,255,.02);
   transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
   cursor: pointer;
-  height: 24rem;
+  height: 25rem;
 }
 
 .item h3{ margin: 6px 0 8px; }
