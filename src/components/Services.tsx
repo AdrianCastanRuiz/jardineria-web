@@ -2,21 +2,22 @@ import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import s from '@styles/Services.module.css'
 import { useI18n } from '@i18n/I18nContext'
-import leaf2 from '@assets/leaf_2.svg'
-import leaf3 from '@assets/leaf_3.svg'
+import poda1 from "@assets/poda-tala/poda1.jpg"
+import jardin3 from '@assets/mantenimiento/jardin3.png'
+import jardin4 from "@assets/mantenimiento/jardin4.jpg"
 import leaf4 from '@assets/leaf_4.svg'
 
 interface Service {
-  icon: string
+  img: string
   titleKey: string
   descKey: string
   path: string
 }
 
 const SERVICES: Service[] = [
-  { icon: leaf2, titleKey: 'services.1.title', descKey: 'services.1.desc', path: '/serveis/poda-tala' },
-  { icon: leaf3, titleKey: 'services.2.title', descKey: 'services.2.desc', path: '/serveis/manteniment' },
-  { icon: leaf4, titleKey: 'services.3.title', descKey: 'services.3.desc', path: '/serveis/diseny' },
+  { img: poda1, titleKey: 'services.1.title', descKey: 'services.1.desc', path: '/serveis/poda-tala' },
+  { img: jardin3, titleKey: 'services.2.title', descKey: 'services.2.desc', path: '/serveis/manteniment' },
+  { img: jardin4, titleKey: 'services.3.title', descKey: 'services.3.desc', path: '/serveis/diseny' },
 ]
 
 export const Services: React.FC = () => {
@@ -79,7 +80,7 @@ export const Services: React.FC = () => {
               aria-label={t(svi.titleKey)}
             >
               <article className={s.item}>
-                <img src={svi.icon} width={64} height={48} alt="" aria-hidden="true" />
+                <img src={svi.img}  alt="" aria-hidden="true" />
                 <h3>{t(svi.titleKey)}</h3>
                 <p>{t(svi.descKey)}</p>
               </article>

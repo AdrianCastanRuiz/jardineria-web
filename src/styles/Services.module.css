@@ -19,7 +19,7 @@
   background: rgba(255,255,255,.02);
   transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
   cursor: pointer;
-  height: 15rem;
+  height: 24rem;
 }
 
 .item h3{ margin: 6px 0 8px; }
@@ -42,6 +42,10 @@
 /* Evita “pegarse” cuando se hace click */
 .item:active{
   transform: translateY(0);
+}
+
+.item > img{
+  height: 15rem;
 }
 .revealBase .item{
   opacity: 0;
