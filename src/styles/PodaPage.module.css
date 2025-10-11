@@ -1,0 +1,48 @@
+.root {}
+
+.breadcrumb { margin-bottom: 16px; }
+
+.layout {
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+.content {}
+
+.title { margin: 12px 0 8px; }
+
+.lede { color: var(--muted); margin-bottom: 16px; }
+
+.h3 { margin-top: 0; }
+
+.card { padding: 24px; }
+
+.list { padding-left: 18px; }
+
+.listOrdered { padding-left: 18px; }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.aside {}
+
+.imgCard { padding: 0; overflow: hidden; }
+
+.image { display: block; width: 100%; height: auto; }
+
+.faq { padding: 24px; margin-top: 16px; }
+
+.details summary { cursor: pointer; }
+
+.details + .details { margin-top: 8px; }
+
+.answer { margin-top: 8px; color: var(--muted); }
