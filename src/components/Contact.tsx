@@ -48,10 +48,10 @@ export const Contact: React.FC = () => {
         </div>
 
         <aside className={s.aside} aria-label="info">
-          <h3>VerdViu</h3>
+          <h3>AgreenJardineria</h3>
           <p>CIF: 00000000X</p>
-          <p>Barcelona · Maresme</p>
-          <p>+34 600 000 000</p>
+          <p>Barcelona · Baix Llobregat</p>
+          <p>+34 675 706 751</p>
           <p>info@verdviu.cat</p>
           <hr style={{borderColor:'#1f2524'}}/>
           <p>Horari: 8:00–18:00</p>

@@ -6,6 +6,9 @@ import jardin1 from "@assets/mantenimiento/jardin1.png"
 import jardin2 from "@assets/mantenimiento/jardin2.jpg"
 import jardin3 from "@assets/mantenimiento/jardin3.png"
 import jardin4 from "@assets/mantenimiento/jardin4.jpg"
+import fb from "@assets/icons/fb.png"
+import ig from "@assets/icons/ig.png"
+
 
 export const Hero: React.FC = () => {
   const { t } = useI18n()
@@ -34,6 +37,9 @@ export const Hero: React.FC = () => {
 
   return (
     <section className={`section ${s.root}`} aria-labelledby="hero-title">
+      {/* <div>
+        <img src={fb} alt="" />
+      </div> */}
       <div className={`container ${s.wrap}`}>
         <div>
           <div className="chip">{t('tagline')}</div>

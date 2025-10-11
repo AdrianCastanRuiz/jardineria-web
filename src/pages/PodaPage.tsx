@@ -11,17 +11,7 @@ import poda7 from '@assets/poda-tala/poda7.jpg'
 import GalleryGrid from '@components/GalleryGrid'
 
 const PodaPage: React.FC = () => {
-  useLayoutEffect(() => {
-    const html = document.documentElement
-    const prev = html.style.scrollBehavior
-    html.style.scrollBehavior = 'auto'
-    requestAnimationFrame(() => {
-      const main = document.getElementById('main')
-      ;(main ?? document.scrollingElement ?? document.documentElement)
-        .scrollTo({ top: 0, left: 0, behavior: 'auto' })
-      html.style.scrollBehavior = prev
-    })
-  }, [])
+  
 
   return (
     <section className={`section ${s.root}`}>
