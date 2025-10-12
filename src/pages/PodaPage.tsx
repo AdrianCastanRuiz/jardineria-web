@@ -21,7 +21,7 @@ const PodaPage: React.FC = () => {
       <div className="container">
         {/* breadcrumb / tornar */}
         <nav className={s.breadcrumb}>
-          <Link to="/#services">{t("nav.services")}</Link>
+          <Link to="/#services">← {t("nav.services")}</Link>
         </nav>
 
         <div className={`grid ${s.layout}`}>
