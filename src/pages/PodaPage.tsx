@@ -9,16 +9,19 @@ import poda5 from '@assets/poda-tala/poda5.jpg'
 import poda6 from '@assets/poda-tala/poda6.jpg'
 import poda7 from '@assets/poda-tala/poda7.jpg'
 import GalleryGrid from '@components/GalleryGrid'
+import { useI18n } from '@i18n/I18nContext'
+
 
 const PodaPage: React.FC = () => {
   
+  const {t} = useI18n();
 
   return (
     <section className={`section ${s.root}`}>
       <div className="container">
         {/* breadcrumb / tornar */}
         <nav className={s.breadcrumb}>
-          <Link to="/#services">← Serveis</Link>
+          <Link to="/#services">{t("nav.services")}</Link>
         </nav>
 
         <div className={`grid ${s.layout}`}>

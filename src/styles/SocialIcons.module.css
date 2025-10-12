@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 2rem;
+  padding-right: 9rem;
   padding-top: 1rem;
 }
 
@@ -60,8 +60,8 @@
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   display: block;
 }
 

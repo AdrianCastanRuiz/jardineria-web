@@ -91,10 +91,6 @@ img {
   box-shadow: var(--shadow)
 }
 
-.section {
-  padding: 64px 0
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
