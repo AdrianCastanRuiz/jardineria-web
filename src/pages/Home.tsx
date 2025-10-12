@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             <Hero />
             <Services />
             <div id="home-gallery">
-            <GalleryGrid gap={30} cols={2} padding={"1rem"} images={images} />
+            <GalleryGrid gap={30} cols={2} padding={"5rem"} images={images} />
             </div>
             <Testimonials />
             <Contact />

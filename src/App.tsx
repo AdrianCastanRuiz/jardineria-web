@@ -6,8 +6,7 @@ import HashScroller from '@components/HashScroller'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import PodaPage from './pages/PodaPage'
 import ScrollToTop from '@components/ScrollToTop'
-import fb from "@assets/icons/fb.png"
-import ig from "@assets/icons/ig.png"
+import SocialIcons from '@components/SocialIcons'
 
 
 const App: React.FC = () => {
@@ -18,32 +17,7 @@ const App: React.FC = () => {
 
       <main id="main">
         
-        <div className="social-container">
-          <a
-            className="social-btn"
-            href="https://www.instagram.com/tu_usuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            title="Instagram"
-          >
-            <img src={ig} alt="" />
-            <span className="sr-only">Instagram</span>
-          </a>
-
-          <a
-            className="social-btn"
-            href="https://www.facebook.com/tu_pagina"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            title="Facebook"
-          >
-            <img src={fb} alt="" />
-            <span className="sr-only">Facebook</span>
-          </a>
-   
-      </div>
+        <SocialIcons/>
         <HashScroller />
         <ScrollToTop />
         <Routes>

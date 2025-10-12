@@ -1,0 +1,117 @@
+/* SocialIcons.module.css */
+:root {
+  /* Superficie y bordes */
+  --si-surface: rgba(255, 255, 255, 0.65);
+  --si-border: rgba(0, 0, 0, 0.08);
+  --si-chip: rgba(255, 255, 255, 0.9);
+  --si-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.06);
+  --si-focus: 0 0 0 3px rgba(72, 187, 120, 0.45); /* anillo focus */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --si-surface: rgba(22, 22, 24, 0.55);
+    --si-border: rgba(255, 255, 255, 0.12);
+    --si-chip: rgba(255, 255, 255, 0.06);
+    --si-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.4);
+    --si-focus: 0 0 0 3px rgba(56, 189, 248, 0.45);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  padding-top: 1rem;
+}
+
+.group {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--si-surface);
+  border: 1px solid var(--si-border);
+  border-radius: 9999px;
+  box-shadow: var(--si-shadow);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  list-style: none;
+  margin: 0;
+}
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px; /* área mínimo táctil */
+  block-size: 44px;
+  border-radius: 9999px;
+  background: var(--si-chip);
+  border: 1px solid var(--si-border);
+  text-decoration: none;
+  outline: none;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+  will-change: transform;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Tintes de hover por marca (suaves, no saturados) */
+.socialBtn[data-brand="instagram"]:hover {
+  background: rgba(225, 48, 108, 0.12);
+  border-color: rgba(225, 48, 108, 0.35);
+}
+
+.socialBtn[data-brand="facebook"]:hover {
+  background: rgba(24, 119, 242, 0.12);
+  border-color: rgba(24, 119, 242, 0.4);
+}
+
+/* Estados interactivos y accesibilidad */
+.socialBtn:hover {
+  transform: translateY(-1px);
+}
+
+.socialBtn:active {
+  transform: translateY(0);
+}
+
+.socialBtn:focus-visible {
+  box-shadow: var(--si-shadow), var(--si-focus);
+}
+
+/* Ajustes para pantallas táctiles */
+@media (pointer: coarse) {
+  .socialBtn {
+    inline-size: 48px;
+    block-size: 48px;
+  }
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Respeto a usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .socialBtn {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+
+    .container{
+        display: none;
+    }
+    
+}
