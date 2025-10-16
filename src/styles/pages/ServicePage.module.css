@@ -1,9 +1,10 @@
-
-.root{
-  margin-top: -2rem;
+.root {
+  margin-top: 2rem;
 }
 
-.breadcrumb { margin-bottom: 16px; }
+.breadcrumb {
+  margin-bottom: 16px;
+}
 
 .layout {
   gap: 24px;
@@ -12,21 +13,35 @@
 }
 
 @media (max-width: 768px) {
-  .layout { grid-template-columns: 1fr; }
+  .layout {
+    grid-template-columns: 1fr;
+  }
 }
 
+.title {
+  margin: 12px 0 8px;
+}
 
-.title { margin: 12px 0 8px; }
+.lede {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
 
-.lede { color: var(--muted); margin-bottom: 16px; }
+.h3 {
+  margin-top: 0;
+}
 
-.h3 { margin-top: 0; }
+.card {
+  padding: 24px;
+}
 
-.card { padding: 24px; }
+.list {
+  padding-left: 18px;
+}
 
-.list { padding-left: 18px; }
-
-.listOrdered { padding-left: 18px; }
+.listOrdered {
+  padding-left: 18px;
+}
 
 .actions {
   display: flex;
@@ -35,19 +50,37 @@
   align-items: center;
 }
 
-.aside {}
+.aside {
+}
 
-.imgCard { padding: 0; overflow: hidden; }
+.imgCard {
+  padding: 0;
+  overflow: hidden;
+}
 
-.image { display: block; width: 100%; height: auto; }
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-.faq { padding: 24px; margin-top: 16px; }
+.faq {
+  padding: 24px;
+  margin-top: 16px;
+}
 
-.details summary { cursor: pointer; }
+.details summary {
+  cursor: pointer;
+}
 
-.details + .details { margin-top: 8px; }
+.details + .details {
+  margin-top: 8px;
+}
 
-.answer { margin-top: 8px; color: var(--muted); }
+.answer {
+  margin-top: 8px;
+  color: var(--muted);
+}
 /* ...lo que ya tengas... */
 
 /* Galería */
@@ -90,9 +123,9 @@
   height: 100%;
   display: block;
   /* Más grandes: hacemos las tarjetas más altas */
-  aspect-ratio: 3 / 2;        /* antes 4/3: ahora un poco más altas */
+  aspect-ratio: 3 / 2; /* antes 4/3: ahora un poco más altas */
   object-fit: cover;
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
 }
 
 .galleryItem:hover .galleryImg {

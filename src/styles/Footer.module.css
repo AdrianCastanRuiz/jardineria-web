@@ -1,3 +1,18 @@
-.root{padding:28px 0;border-top:1px solid #1f2524;color:var(--muted);font-size:14px}
-.inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.social img{ width:18px; height:18px; display:block; }
+.root {
+  padding: 28px 0;
+  border-top: 1px solid #1f2524;
+  color: var(--muted);
+  font-size: 14px;
+}
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.social img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}

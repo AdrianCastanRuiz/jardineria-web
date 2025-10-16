@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 9rem;
+  padding-right: 14rem;
   padding-top: 1rem;
 }
 
@@ -51,11 +51,8 @@
   border: 1px solid var(--si-border);
   text-decoration: none;
   outline: none;
-  transition:
-    transform 120ms ease,
-    background-color 120ms ease,
-    border-color 120ms ease,
-    box-shadow 120ms ease;
+  transition: transform 120ms ease, background-color 120ms ease,
+    border-color 120ms ease, box-shadow 120ms ease;
   will-change: transform;
 }
 
@@ -109,9 +106,7 @@
 }
 
 @media (max-width: 640px) {
-
-    .container{
-        display: none;
-    }
-    
+  .container {
+    display: none;
+  }
 }
