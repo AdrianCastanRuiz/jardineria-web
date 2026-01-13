@@ -26,7 +26,7 @@ const ServicePage = ({ service, images }: ServicePageProps) => {
             <h1 className={s.title}>{t(`services${service}.title`)}</h1>
             <p className={s.lede}>
               Poda segura i tala controlada amb personal qualificat. Treballs en
-              alçada, sanejament de capçades i retirada de restes amb neteja
+              alçada, sanejament de capçades i retirada de restes amb n\eteja
               completa. Pressupost sense compromís.
             </p>
 

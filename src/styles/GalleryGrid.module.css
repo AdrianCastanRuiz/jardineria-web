@@ -109,7 +109,6 @@
   display: block;
   width: 100%;
   height: auto;
-  /* max-height: 90vh; */
   height: 70vh;
   object-fit: contain;
   border-radius: 14px;
