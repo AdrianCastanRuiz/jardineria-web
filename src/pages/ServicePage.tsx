@@ -25,29 +25,27 @@ const ServicePage = ({ service, images }: ServicePageProps) => {
             <div className="chip">{t("services.h2")}</div>
             <h1 className={s.title}>{t(`services${service}.title`)}</h1>
             <p className={s.lede}>
-              Poda segura i tala controlada amb personal qualificat. Treballs en
-              alçada, sanejament de capçades i retirada de restes amb n\eteja
-              completa. Pressupost sense compromís.
+            {t(`services${service}.desc2`)}
             </p>
 
             <div className="grid">
               <article className={`card ${s.card}`}>
-                <h3 className={s.h3}>Beneficis</h3>
+                <h3 className={s.h3}>{t(`services${service}.benefits`)}</h3>
                 <ul className={s.list}>
-                  <li>Tècniques de poda adequades a cada espècie</li>
-                  <li>Treballs en alçada amb equips homologats</li>
-                  <li>Gestió de residus i neteja de la zona</li>
-                  <li>Intervencions ràpides i segures</li>
+                  <li>{t(`services${service}.benefits2`)}</li>
+                  <li>{t(`services${service}.benefits3`)}</li>
+                  <li>{t(`services${service}.benefits4`)}</li>
+                  <li>{t(`services${service}.benefits5`)}</li>
                 </ul>
               </article>
 
               <article className={`card ${s.card}`}>
-                <h3 className={s.h3}>Procés</h3>
+                <h3 className={s.h3}>{t(`services${service}.process`)}</h3>
                 <ol className={s.listOrdered}>
-                  <li>Inspecció i diagnòstic de l’arbre</li>
-                  <li>Pla de treball i mesures de seguretat</li>
-                  <li>Execució, retirada i neteja</li>
-                  <li>Recomanacions de manteniment</li>
+                  <li>{t(`services${service}.process2`)}</li>
+                  <li>{t(`services${service}.process3`)}</li>
+                  <li>{t(`services${service}.process4`)}</li>
+                  <li>{t(`services${service}.process5`)}</li>
                 </ol>
               </article>
 
@@ -76,21 +74,19 @@ const ServicePage = ({ service, images }: ServicePageProps) => {
             </figure>
 
             <div className={`card ${s.faq}`}>
-              <h3 className={s.h3}>Preguntes freqüents</h3>
+              <h3 className={s.h3}>{t("faq")}</h3>
 
               <details className={s.details}>
-                <summary>Necessito permís de l’ajuntament?</summary>
+                <summary>{t(`services${service}.faq1`)}</summary>
                 <p className={s.answer}>
-                  Pot ser necessari segons la normativa municipal i l’espècie.
-                  T’assessorem i, si cal, t’ajudem amb el tràmit.
+                  {t(`services${service}.answer1`)}
                 </p>
               </details>
 
               <details className={s.details}>
-                <summary>Què feu amb les restes?</summary>
+                <summary>{t(`services${service}.faq2`)}</summary>
                 <p className={s.answer}>
-                  Triturem i retirem les restes per a la seva gestió adequada.
-                  També les podem deixar com a encoixinat si ho prefereixes.
+                  {t(`services${service}.answer2`)}
                 </p>
               </details>
             </div>

@@ -22,8 +22,8 @@ export const LanguageSwitcher: React.FC = () => {
         onChange={onChange}
         aria-label={t('switch.lang')}
       >
-        <option value="ca">{t('lang.ca')}</option>
-        <option value="es">{t('lang.es')}</option>
+        <option className={s.option} value="ca">{t('lang.ca')}</option>
+        <option className={s.option} value="es">{t('lang.es')}</option>
       </select>
     </div>
   )

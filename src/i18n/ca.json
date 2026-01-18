@@ -12,8 +12,10 @@
   "services.h2": "Manteniment, disseny i cura de jardins",
   "services1.title": "Poda i tala",
   "services1.desc": "Poda de formació, manteniment i seguretat. Gestió responsable de restes.",
+  "services1.desc2": "Poda segura i tala controlada amb personal qualificat. Treballs en alçada, sanejament de capçades i retirada de restes amb neteja completa. Pressupost sense compromís.",
   "services2.title": "Manteniment de jardins",
   "services2.desc": "Gespa, regs, control de plagues i neteja de parcel·les.",
+  "services2.desc2": "Oferim un servei integral de manteniment de jardins dissenyat perquè els teus espais verds llueixin sempre saludables, ordenats i plens de vida. Ens encarreguem del tall i la cura de la gespa, la poda d’arbres i arbustos, el control de plagues, la fertilització i la neteja general, utilitzant tècniques professionals i productes adequats per a cada tipus de planta. El nostre equip treballa de manera puntual, responsable i personalitzada, adaptant-se a les necessitats del teu jardí per garantir resultats duradors i una imatge impecable durant tot l’any.",
   "services3.title": "Neteja de parceles",
   "services3.desc": "bla bla bla.",
   "services4.title": "Instalacions de reg",
@@ -36,5 +38,7 @@
   "lang.es": "Castellà",
   "switch.lang": "Idioma",
   "a11y.skip": "Saltar al contingut principal",
-  "answer": "Resposta"
+  "answer": "Resposta",
+  "faq": "Preguntes freqüents"
+
 }
