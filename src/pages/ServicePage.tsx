@@ -99,7 +99,7 @@ const ServicePage = ({ service, images }: ServicePageProps) => {
           aria-labelledby="poda-gallery-title"
         >
           <h2 id="poda-gallery-title" className={s.galleryTitle}>
-            Galeria de treballs
+            {t("workGallery")}
           </h2>
           <GalleryGrid
             images={images}

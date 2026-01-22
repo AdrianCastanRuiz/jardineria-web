@@ -10,8 +10,10 @@ import jardin3 from "@assets/mantenimiento/jardin3.png";
 import jardin4 from "@assets/mantenimiento/jardin4.jpg";
 import riego from "@assets/mantenimiento/riego.png";
 import poda1 from "@assets/poda-tala/poda1.jpg";
-import { useEffect } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useLoaderData, useLocation } from "react-router";
+import { appContext } from "../App";
+
 
 const Home: React.FC = () => {
   const images = [
@@ -24,14 +26,17 @@ const Home: React.FC = () => {
   ];
 
   const { hash } = useLocation()
+  const ctx = useContext(appContext)
 
-  console.log(hash)
+
 
   useEffect(() => {
+    console.log(hash)
+    console.log("hola")
     if (hash) {
       document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
-  }, [])
+  }, [ctx?.scroll, hash])
 
   return (
     <>

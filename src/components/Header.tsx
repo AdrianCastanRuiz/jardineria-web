@@ -4,15 +4,19 @@ import s from '@styles/Header.module.css'
 import { useI18n } from '@i18n/I18nContext'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { Link, useLocation } from 'react-router-dom'
+import { appContext } from '../App'
+import { useContext } from 'react'
 
 
 export const Header: React.FC = () => {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
   const sheetRef = useRef<HTMLDivElement | null>(null)
-  const { pathname, hash } = useLocation()
-
-  console.log(pathname)
+  const ctx = useContext(appContext)
+ 
+  const toggleScroll = ()=>{
+    ctx?.setScroll(!ctx?.scroll)
+  }
 
   // Cerrar con Escape
   useEffect(() => {
@@ -32,19 +36,19 @@ export const Header: React.FC = () => {
   }, [open])
 
   // Maneja anclas cuando ya estás en la misma URL (#hash incluido)
-  const handleAnchorClick = (targetHash: string, closeAfter = false) =>
-    (e: React.MouseEvent<HTMLAnchorElement>) => {
-      const samePath = pathname === '/' // destino es Home en estos enlaces
-      const sameHash = hash === targetHash
-      if (samePath && sameHash) {
-        e.preventDefault()
-        const id = targetHash.slice(1)
-        requestAnimationFrame(() => {
-          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        })
-      }
-      if (closeAfter) setOpen(false)
-    }
+  // const handleAnchorClick = (targetHash: string, closeAfter = false) =>
+  //   (e: React.MouseEvent<HTMLAnchorElement>) => {
+  //     const samePath = pathname === '/' // destino es Home en estos enlaces
+  //     const sameHash = hash === targetHash
+  //     if (samePath && sameHash) {
+  //       e.preventDefault()
+  //       // const id = targetHash.slice(1)
+  //       requestAnimationFrame(() => {
+  //         document.getElementById(targetHash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  //       })
+  //     }
+  //     if (closeAfter) setOpen(false)
+  //   }
 
   return (
     <header className={`sticky ${s.root}`}>
@@ -56,16 +60,16 @@ export const Header: React.FC = () => {
 
         {/* Nav desktop */}
         <nav className={s.nav} aria-label="primary">
-          <Link className={s.link} to="/#services" onClick={handleAnchorClick('#services')}>
+          <Link className={s.link} onClick={toggleScroll} to="/#services" >
             {t('nav.services')}
           </Link>
-          <Link className={s.link} to="/#home-gallery" onClick={handleAnchorClick('#home-gallery')}>
+          <Link className={s.link} onClick={toggleScroll} to="/#home-gallery">
             {t('nav.gallery')}
           </Link>
-          <Link className={s.link} to="/#testimonials" onClick={handleAnchorClick('#testimonials')}>
+          <Link className={s.link} onClick={toggleScroll} to="/#testimonials">
             {t('nav.testimonials')}
           </Link>
-          <Link className={s.link} to="/#contact" onClick={handleAnchorClick('#contact')}>
+          <Link className={s.link} onClick={toggleScroll} to="/#contact" >
             {t('nav.contact')}
           </Link>
         </nav>
@@ -90,16 +94,16 @@ export const Header: React.FC = () => {
         <div className={s.backdrop} onClick={() => setOpen(false)} />
         <div className={s.sheet} id="mobile-nav" ref={sheetRef} role="dialog" aria-modal="true" aria-label="Navegació mòbil">
           <nav className={s.sheetLinks} aria-label="mobile">
-            <Link className={s.mlink} to="/#services" onClick={handleAnchorClick('#services', true)}>
+            <Link className={s.mlink} onClick={toggleScroll} to="/#services">
               {t('nav.services')}
             </Link>
-            <Link className={s.mlink} to="/#home-gallery" onClick={handleAnchorClick('#home-gallery', true)}>
+            <Link className={s.mlink} onClick={toggleScroll} to="/#home-gallery">
               {t('nav.gallery')}
             </Link>
-            <Link className={s.mlink} to="/#testimonials" onClick={handleAnchorClick('#testimonials', true)}>
+            <Link className={s.mlink} onClick={toggleScroll} to="/#testimonials" >
               {t('nav.testimonials')}
             </Link>
-            <Link className={s.mlink} to="/#contact" onClick={handleAnchorClick('#contact', true)}>
+            <Link className={s.mlink} onClick={toggleScroll} to="/#contact" >
               {t('nav.contact')}
             </Link>
           </nav>
