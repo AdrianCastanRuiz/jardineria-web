@@ -4,7 +4,6 @@ import s from '@styles/Header.module.css'
 import { useI18n } from '@i18n/I18nContext'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { Link, useLocation } from 'react-router-dom'
-import fb from "@assets/icons/fb.png"
 
 
 export const Header: React.FC = () => {
@@ -12,6 +11,8 @@ export const Header: React.FC = () => {
   const [open, setOpen] = useState(false)
   const sheetRef = useRef<HTMLDivElement | null>(null)
   const { pathname, hash } = useLocation()
+
+  console.log(pathname)
 
   // Cerrar con Escape
   useEffect(() => {

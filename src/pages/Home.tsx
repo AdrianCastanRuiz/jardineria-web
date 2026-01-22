@@ -10,6 +10,8 @@ import jardin3 from "@assets/mantenimiento/jardin3.png";
 import jardin4 from "@assets/mantenimiento/jardin4.jpg";
 import riego from "@assets/mantenimiento/riego.png";
 import poda1 from "@assets/poda-tala/poda1.jpg";
+import { useEffect } from "react";
+import { useLoaderData, useLocation } from "react-router";
 
 const Home: React.FC = () => {
   const images = [
@@ -20,15 +22,36 @@ const Home: React.FC = () => {
     { src: riego },
     { src: poda1 },
   ];
+
+  const { hash } = useLocation()
+
+  console.log(hash)
+
+  useEffect(() => {
+    if (hash) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [])
+
   return (
     <>
       <Hero />
-      <Services />
-      <div id="home-gallery">
+      <div id="#services">
+        <Services />
+
+      </div>
+      <div id="#home-gallery">
         <GalleryGrid gap={30} cols={2} padding={"5rem"} images={images} />
       </div>
-      <Testimonials />
-      <Contact />
+      <div id="#testimonials">
+        <Testimonials />
+
+      </div>
+      <div id="#contact">
+
+        <Contact />
+
+      </div>
     </>
   );
 };
