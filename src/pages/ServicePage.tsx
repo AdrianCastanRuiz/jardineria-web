@@ -55,10 +55,10 @@ const ServicePage = ({ service, images }: ServicePageProps) => {
                   className="btn"
                   aria-label="Sol·licitar pressupost"
                 >
-                  Sol·licitar pressupost
+                  {t(`cta.contact`)}
                 </a>
                 <span className="chip">ISO • Eco</span>
-                <span className="chip">+10 anys</span>
+                <span className="chip">+10 {t("years")}</span>
               </div>
             </div>
           </div>
