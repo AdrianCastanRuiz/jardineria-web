@@ -31,8 +31,7 @@ const Home: React.FC = () => {
 
 
   useEffect(() => {
-    console.log(hash)
-    console.log("hola")
+
     if (hash) {
       document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
