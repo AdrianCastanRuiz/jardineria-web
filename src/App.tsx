@@ -6,7 +6,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PodaPage from "./pages/PodaPage";
 import MantenimientoPage from "./pages/MantenimientoPage";
 import ScrollToTop from "@components/ScrollToTop";
-import SocialIcons from "@components/SocialIcons";
 import { createContext, useState } from "react";
 import LimpiezaPage from "./pages/LimpiezaPage";
 import RiegoPage from "./pages/RiegoPage";
