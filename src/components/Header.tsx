@@ -5,6 +5,7 @@ import { useI18n } from '@i18n/I18nContext'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { Link } from 'react-router-dom'
 import { appContext } from '../App'
+
 import { useContext } from 'react'
 
 
@@ -17,7 +18,7 @@ export const Header: React.FC = () => {
   const handleLinkClick = (e: any) => {
  
     ctx?.setScroll(!ctx?.scroll)
-    setOpen(false)
+    setOpen(false);
   }
 
   // Cerrar con Escape
