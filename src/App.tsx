@@ -8,10 +8,15 @@ import MantenimientoPage from "./pages/MantenimientoPage";
 import ScrollToTop from "@components/ScrollToTop";
 import SocialIcons from "@components/SocialIcons";
 import { createContext, useState } from "react";
+import LimpiezaPage from "./pages/LimpiezaPage";
+import RiegoPage from "./pages/RiegoPage";
+import PiscinesPage from "./pages/PiscinesPage";
 
 type AppContext = {
   scroll: boolean,
   setScroll: React.Dispatch<React.SetStateAction<boolean>>;
+  popUpForm: boolean,
+  setPopUpForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export  const appContext = createContext<AppContext | null>(null)
@@ -20,10 +25,11 @@ export  const appContext = createContext<AppContext | null>(null)
 const App: React.FC = () => {
 
   const [scroll, setScroll] = useState(false)
+  const [popUpForm, setPopUpForm] = useState(false)
 
   return (
     <>
-      <appContext.Provider value={{scroll, setScroll}}>
+      <appContext.Provider value={{scroll, setScroll, popUpForm, setPopUpForm}}>
 
         <Header />
 
@@ -35,7 +41,10 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/serveis/poda-tala" element={<PodaPage />} />
             <Route path="/serveis/manteniment" element={<MantenimientoPage />} />
-            <Route path="/serveis/diseny" element={<p>Servei de diseny</p>} />
+            <Route path="/serveis/neteja" element={<LimpiezaPage />} />
+            <Route path="/serveis/reg" element={<RiegoPage />} />
+                        <Route path="/serveis/piscines" element={<PiscinesPage />} />
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

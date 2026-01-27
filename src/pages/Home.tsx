@@ -33,29 +33,18 @@ const Home: React.FC = () => {
   useEffect(() => {
 
     if (hash) {
-      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      document.getElementById(hash.replace(/#/g, ""))?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, [ctx?.scroll, hash])
 
   return (
     <>
       <Hero />
-      <div id="#services">
-        <Services />
+      <Services />
+      <GalleryGrid gap={30} cols={2} padding={"5rem"} images={images} />
+      <Testimonials />
+      <Contact />
 
-      </div>
-      <div id="#home-gallery">
-        <GalleryGrid gap={30} cols={2} padding={"5rem"} images={images} />
-      </div>
-      <div id="#testimonials">
-        <Testimonials />
-
-      </div>
-      <div id="#contact">
-
-        <Contact />
-
-      </div>
     </>
   );
 };

@@ -67,7 +67,7 @@ export const Services: React.FC = () => {
               aria-label={t(svi.titleKey)}
             >
               <article className={s.item}>
-                <img src={svi.img} alt="" aria-hidden="true" />
+                <img src={svi.img} alt={t(svi.titleKey)} aria-hidden="true" />
                 <h3>{t(svi.titleKey)}</h3>
                 <p>{t(svi.descKey)}</p>
               </article>

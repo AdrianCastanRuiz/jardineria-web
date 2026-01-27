@@ -119,7 +119,7 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
 
   return (
     <>
-      <div className={`${s.root} ${className ?? ""}`} style={styleVars}>
+      <div id="home-gallery" className={`${s.root} ${className ?? ""}`} style={styleVars}>
         {images.map((img, i) => (
           <button
             key={img.src ?? i}

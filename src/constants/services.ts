@@ -1,6 +1,8 @@
 import poda1 from "@assets/poda-tala/poda1.jpg";
 import jardin3 from "@assets/mantenimiento/jardin3.png";
-import jardin4 from "@assets/mantenimiento/jardin4.jpg";
+import limpieza1 from "@assets/limpieza/limpieza1.jpg";
+import riego1 from "@assets/riego/riego1.jpg"
+import piscina1 from "@assets/picinas/picina1.jpg"
 
 interface Service {
   img: string;
@@ -23,22 +25,22 @@ const SERVICES: Service[] = [
     path: "/serveis/manteniment",
   },
   {
-    img: jardin4,
+    img: limpieza1,
     titleKey: "services3.title",
     descKey: "services3.desc",
-    path: "/serveis/diseny",
+    path: "/serveis/neteja",
   },
   {
-    img: jardin4,
+    img: riego1,
     titleKey: "services4.title",
     descKey: "services4.desc",
-    path: "/serveis/diseny",
+    path: "/serveis/reg",
   },
   {
-    img: jardin4,
+    img: piscina1,
     titleKey: "services5.title",
     descKey: "services5.desc",
-    path: "/serveis/diseny",
+    path: "/serveis/piscines",
   },
 ];
 

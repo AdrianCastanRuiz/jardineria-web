@@ -97,6 +97,30 @@
   gap: 24px;
   grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 por fila */
 }
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Esto es clave: el backdrop captura todos los clicks */
+  pointer-events: auto;
+}
+
+.modalContent {
+  /* Tu “caja” del formulario */
+  border-radius: 12px;
+  max-width: 720px;
+  width: min(92vw, 720px);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 16px;
+}
 
 /* 2 por fila en pantallas medianas */
 @media (max-width: 900px) {

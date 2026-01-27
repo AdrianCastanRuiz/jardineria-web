@@ -13,8 +13,9 @@ export const Header: React.FC = () => {
   const [open, setOpen] = useState(false)
   const sheetRef = useRef<HTMLDivElement | null>(null)
   const ctx = useContext(appContext)
+
+  const handleLinkClick = (e: any) => {
  
-  const toggleScroll = ()=>{
     ctx?.setScroll(!ctx?.scroll)
   }
 
@@ -53,23 +54,24 @@ export const Header: React.FC = () => {
   return (
     <header className={`sticky ${s.root}`}>
       <div className={`container ${s.inner}`}>
-        <Link className={s.brand} to="/">
+        <Link
+          className={s.brand} to="/">
           <span className={s.brandLogo}>V</span>
           <span>AgreenJardineria</span>
         </Link>
 
         {/* Nav desktop */}
         <nav className={s.nav} aria-label="primary">
-          <Link className={s.link} onClick={toggleScroll} to="/#services" >
+          <Link className={s.link} onClick={handleLinkClick} to="/#services" >
             {t('nav.services')}
           </Link>
-          <Link className={s.link} onClick={toggleScroll} to="/#home-gallery">
+          <Link className={s.link} onClick={handleLinkClick} to="/#home-gallery">
             {t('nav.gallery')}
           </Link>
-          <Link className={s.link} onClick={toggleScroll} to="/#testimonials">
+          <Link className={s.link} onClick={handleLinkClick} to="/#testimonials">
             {t('nav.testimonials')}
           </Link>
-          <Link className={s.link} onClick={toggleScroll} to="/#contact" >
+          <Link className={s.link} onClick={handleLinkClick} to="/#contact" >
             {t('nav.contact')}
           </Link>
         </nav>
@@ -94,16 +96,16 @@ export const Header: React.FC = () => {
         <div className={s.backdrop} onClick={() => setOpen(false)} />
         <div className={s.sheet} id="mobile-nav" ref={sheetRef} role="dialog" aria-modal="true" aria-label="Navegació mòbil">
           <nav className={s.sheetLinks} aria-label="mobile">
-            <Link className={s.mlink} onClick={toggleScroll} to="/#services">
+            <Link className={s.mlink} onClick={handleLinkClick} to="/#services">
               {t('nav.services')}
             </Link>
-            <Link className={s.mlink} onClick={toggleScroll} to="/#home-gallery">
+            <Link className={s.mlink} onClick={handleLinkClick} to="/#home-gallery">
               {t('nav.gallery')}
             </Link>
-            <Link className={s.mlink} onClick={toggleScroll} to="/#testimonials" >
+            <Link className={s.mlink} onClick={handleLinkClick} to="/#testimonials" >
               {t('nav.testimonials')}
             </Link>
-            <Link className={s.mlink} onClick={toggleScroll} to="/#contact" >
+            <Link className={s.mlink} onClick={handleLinkClick} to="/#contact" >
               {t('nav.contact')}
             </Link>
           </nav>

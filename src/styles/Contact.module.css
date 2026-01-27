@@ -7,4 +7,51 @@
 .textarea{min-height:120px;resize:vertical}
 .aside{border:1px solid #1f2524;border-radius:16px;padding:18px;background:rgba(255,255,255,.02)}
 .label{font-weight:700}
+/* .popUpSection{
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(15, 15, 15);
+
+} */
+.popUpWrap{
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-radius: 5%;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* background-color: rgb(15, 15, 15); */
+  background-color: #2e3130;
+}
+
+.popUpSubmit{
+  font-size: 1rem;
+  width: 6rem;
+  height: 2.5rem;
+  margin: 0.5rem;
+}
+
 @media (max-width: 900px){ .wrap{grid-template-columns:1fr} }
+@media (max-width: 921px){
+  
+    .popUpWrap{
+        width: 90vw;
+
+    }
+
+   .popUpLabel{
+    font-size: 1rem;
+   }
+   .control{
+    padding: 0;
+    gap: 1px;
+   }
+   .input{
+    padding: 5px;
+   }
+  }
