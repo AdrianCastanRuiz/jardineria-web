@@ -17,6 +17,7 @@ export const Header: React.FC = () => {
   const handleLinkClick = (e: any) => {
  
     ctx?.setScroll(!ctx?.scroll)
+    setOpen(false)
   }
 
   // Cerrar con Escape
