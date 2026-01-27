@@ -43,11 +43,12 @@ const App: React.FC = () => {
             <Route path="/serveis/manteniment" element={<MantenimientoPage />} />
             <Route path="/serveis/neteja" element={<LimpiezaPage />} />
             <Route path="/serveis/reg" element={<RiegoPage />} />
-                        <Route path="/serveis/piscines" element={<PiscinesPage />} />
+            <Route path="/serveis/piscines" element={<PiscinesPage />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
+        holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         <Footer />
       </appContext.Provider>
 
