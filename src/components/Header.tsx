@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import s from '@styles/Header.module.css'
 import { useI18n } from '@i18n/I18nContext'
 import { LanguageSwitcher } from './LanguageSwitcher'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { appContext } from '../App'
 import { useContext } from 'react'
 
