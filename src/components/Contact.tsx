@@ -102,7 +102,7 @@ export const Contact: React.FC = () => {
         </div>
         {!ctx?.popUpForm && 
            <aside className={s.aside} aria-label="info">
-          <h3>AgreenJardineria</h3>
+          <h3>AcnJardineria</h3>
           <p>CIF: 00000000X</p>
           <p>Barcelona · Baix Llobregat</p>
           <p>+34 675 706 751</p>

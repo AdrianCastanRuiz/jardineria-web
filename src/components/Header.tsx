@@ -59,7 +59,7 @@ export const Header: React.FC = () => {
         <Link
           className={s.brand} to="/">
           <span className={s.brandLogo}>J</span>
-          <span>AgreenJardineria</span>
+          <span>AcnJardineria</span>
         </Link>
 
         {/* Nav desktop */}
