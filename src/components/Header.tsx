@@ -58,7 +58,7 @@ export const Header: React.FC = () => {
       <div className={`container ${s.inner}`}>
         <Link
           className={s.brand} to="/">
-          <span className={s.brandLogo}>V</span>
+          <span className={s.brandLogo}>J</span>
           <span>AgreenJardineria</span>
         </Link>
 
