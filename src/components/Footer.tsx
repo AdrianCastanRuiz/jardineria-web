@@ -6,33 +6,30 @@ import ig from "@assets/icons/ig.png";
 
 export const Footer: React.FC = () => {
   const { t } = useI18n();
+  const year = new Date().getFullYear();
+
   return (
     <footer className={s.root}>
       <div className={`container ${s.inner}`}>
-        <div>
-          © {new Date().getFullYear()} {t("brand")} · {t("footer.rights")}
+        <div className={s.copy}>
+          © {year} {t("brand")} · {t("footer.rights")}
         </div>
 
-        <div
-          className={s.anchorsDiv}
-          // style={{
-          //   display: "flex",
-          //   gap: 12,
-          //   alignItems: "center",
-          //   flexWrap: "wrap",
-          // }}
-        >
+        <nav className={s.anchorsDiv} aria-label={t("footer.navLabel") ?? "Footer navigation"}>
           <div className={s.headersLinksDiv}>
-
-            <a href="#services">· {t("nav.services")}</a>
-            <a href="#gallery">· {t("nav.gallery")}</a>
-            <a href="#contact">· {t("nav.contact")}</a>
+            <a className={s.link} href="#services">
+              {t("nav.services")}
+            </a>
+            <a className={s.link} href="#gallery">
+              {t("nav.gallery")}
+            </a>
+            <a className={s.link} href="#contact">
+              {t("nav.contact")}
+            </a>
           </div>
 
-
           {/* Redes sociales */}
-
-          <div className={s.socialDiv}>
+          <div className={s.socialDiv} aria-label={t("footer.socialLabel") ?? "Social links"}>
             <a
               className={s.social}
               href="https://www.instagram.com/tu_usuario"
@@ -41,7 +38,7 @@ export const Footer: React.FC = () => {
               aria-label="Instagram"
               title="Instagram"
             >
-              <img src={ig} alt="instagram icon" aria-hidden />
+              <img src={ig} alt="" aria-hidden="true" />
               <span className={s.srOnly}>Instagram</span>
             </a>
 
@@ -53,12 +50,11 @@ export const Footer: React.FC = () => {
               aria-label="Facebook"
               title="Facebook"
             >
-              <img src={fb} alt="facebook icon" aria-hidden />
+              <img src={fb} alt="" aria-hidden="true" />
               <span className={s.srOnly}>Facebook</span>
             </a>
           </div>
-
-        </div>
+        </nav>
       </div>
     </footer>
   );
