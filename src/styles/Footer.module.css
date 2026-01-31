@@ -4,6 +4,7 @@
   color: var(--muted);
   font-size: 14px;
 }
+
 .inner {
   display: flex;
   justify-content: space-between;
@@ -11,8 +12,40 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+
+.anchorsDiv {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .social img {
   width: 30px;
   height: 30px;
   display: block;
+}
+
+.socialDiv {
+  display: flex;
+  gap: 10px;
+  margin-left: 1rem;
+}
+
+.headersLinksDiv{
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 400px) {
+  .inner {
+    gap: 1px;
+  }
+}
+
+@media (max-width: 721px){
+  .anchorsDiv {
+    width: 100%;
+    justify-content: space-between;
+  }
 }

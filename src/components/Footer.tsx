@@ -14,45 +14,50 @@ export const Footer: React.FC = () => {
         </div>
 
         <div
-          style={{
-            display: "flex",
-            gap: 12,
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
+          className={s.anchorsDiv}
+          // style={{
+          //   display: "flex",
+          //   gap: 12,
+          //   alignItems: "center",
+          //   flexWrap: "wrap",
+          // }}
         >
-          <a href="#services">· {t("nav.services")}</a>
-          <a href="#gallery">· {t("nav.gallery")}</a>
-          <a href="#contact">· {t("nav.contact")}</a>
+          <div className={s.headersLinksDiv}>
+
+            <a href="#services">· {t("nav.services")}</a>
+            <a href="#gallery">· {t("nav.gallery")}</a>
+            <a href="#contact">· {t("nav.contact")}</a>
+          </div>
+
 
           {/* Redes sociales */}
-          <span className={s.dot} aria-hidden>
-            ·
-          </span>
 
-          <a
-            className={s.social}
-            href="https://www.instagram.com/tu_usuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            title="Instagram"
-          >
-            <img src={ig}  alt="instagram icon" aria-hidden />
-            <span className={s.srOnly}>Instagram</span>
-          </a>
+          <div className={s.socialDiv}>
+            <a
+              className={s.social}
+              href="https://www.instagram.com/tu_usuario"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <img src={ig} alt="instagram icon" aria-hidden />
+              <span className={s.srOnly}>Instagram</span>
+            </a>
 
-          <a
-            className={s.social}
-            href="https://www.facebook.com/tu_pagina"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            title="Facebook"
-          >
-            <img src={fb} alt="facebook icon" aria-hidden />
-            <span className={s.srOnly}>Facebook</span>
-          </a>
+            <a
+              className={s.social}
+              href="https://www.facebook.com/tu_pagina"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <img src={fb} alt="facebook icon" aria-hidden />
+              <span className={s.srOnly}>Facebook</span>
+            </a>
+          </div>
+
         </div>
       </div>
     </footer>
