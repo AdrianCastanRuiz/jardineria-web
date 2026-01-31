@@ -75,6 +75,17 @@
   .heroImg {
     height: auto;
   }
+
+  .stats{
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .stat{
+    padding: 8px;
+  }
+  .stat strong{
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 640px) {

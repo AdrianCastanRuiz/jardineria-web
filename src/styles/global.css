@@ -118,6 +118,6 @@ header.sticky {
 
 @media (max-width: 768px) {
   .section {
-    padding: 40px 0;
+    padding-top: 1rem;
   }
 }

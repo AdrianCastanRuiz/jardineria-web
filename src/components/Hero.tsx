@@ -1,23 +1,29 @@
 import React, { useEffect, useMemo, useState } from "react";
 import s from "@styles/Hero.module.css";
 import { useI18n } from "@i18n/I18nContext";
-import leaf1 from "@assets/leaf_1.svg";
 import jardin3 from "@assets/mantenimiento/jardin3.png";
 import jardin4 from "@assets/mantenimiento/jardin4.jpg";
-import antes from "@assets/poda-tala/antes.jpeg";
-import despues from "@assets/poda-tala/despues.jpeg";
+import jardin5 from "@assets/mantenimiento/jardin5.jpg";
+import picina1 from "@assets/picinas/picina1.jpg";
+import useIsMobile from "@hooks/useIsMobile";
+
+
 import fb from "@assets/icons/fb.png";
 import ig from "@assets/icons/ig.png";
+import { p } from "framer-motion/client";
 
 export const Hero: React.FC = () => {
   const { t } = useI18n();
 
   // Array de imágenes a rotar
-  const photos = useMemo(() => [antes, despues, jardin3, jardin4], []);
+  const photos = useMemo(() => [  jardin4, jardin5, picina1], []);
 
   // Índice actual
   const [idx, setIdx] = useState(0);
 
+  const mobile = useIsMobile()
+
+console.log(mobile)
   // Cambio de imagen cada 2s
   useEffect(() => {
     const iv = setInterval(() => {
@@ -42,7 +48,7 @@ export const Hero: React.FC = () => {
           <h1 id="hero-title" className={s.title}>
             {t("hero.title")}
           </h1>
-          <p className={s.subtitle}>{t("hero.subtitle")}</p>
+          {!mobile && <p className={s.subtitle}>{t("hero.subtitle")}</p>}
           <div className={s.bullets}>
             <span className="chip">ISO • Eco</span>
             <span className="chip">+10 anys</span>
@@ -75,6 +81,10 @@ export const Hero: React.FC = () => {
             className={`${s.heroImg} ${s[`img-${idx + 1}`]}`}
           />
         </div>
+
+        {mobile && <p>{t("hero.subtitle")}</p>}
+
+
       </div>
     </section>
   );

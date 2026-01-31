@@ -5,7 +5,6 @@ import { useI18n } from '@i18n/I18nContext'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { Link } from 'react-router-dom'
 import { appContext } from '../App'
-
 import { useContext } from 'react'
 
 
@@ -112,8 +111,8 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
           <div className={s.sheetFooter}>
-            <LanguageSwitcher />
-            <button className={s.closeGhost} onClick={() => setOpen(false)} aria-label="Tancar">✕</button>
+            {/* <LanguageSwitcher /> */}
+            {/* <button className={s.closeGhost} onClick={() => setOpen(false)} aria-label="Tancar">✕</button> */}
           </div>
         </div>
       </div>
