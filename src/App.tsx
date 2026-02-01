@@ -34,7 +34,6 @@ const App: React.FC = () => {
 
         <main id="main">
           {/* <SocialIcons /> */}
-          {/* <HashScroller /> */}
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />

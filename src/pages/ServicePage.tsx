@@ -2,7 +2,7 @@ import { Contact } from "@components/Contact";
 import GalleryGrid from "@components/GalleryGrid";
 import { useI18n } from "@i18n/I18nContext";
 import s from "../styles/pages/ServicePage.module.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { appContext } from "../App";
 
@@ -22,6 +22,14 @@ const ServicePage = ({ service, images }: ServicePageProps) => {
     setPopUp(false)
     ctx?.setPopUpForm(false)
   }
+
+  useEffect(()=>{
+    if(popUp){
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+  },[popUp])
 
   return (
     <>
