@@ -17,13 +17,13 @@ export const Footer: React.FC = () => {
 
         <nav className={s.anchorsDiv} aria-label={t("footer.navLabel") ?? "Footer navigation"}>
           <div className={s.headersLinksDiv}>
-            <a className={s.link} href="#services">
+            <a className={s.link} href="/#services">
               {t("nav.services")}
             </a>
-            <a className={s.link} href="#gallery">
+            <a className={s.link} href="/#home-gallery">
               {t("nav.gallery")}
             </a>
-            <a className={s.link} href="#contact">
+            <a className={s.link} href="/#contact">
               {t("nav.contact")}
             </a>
           </div>
