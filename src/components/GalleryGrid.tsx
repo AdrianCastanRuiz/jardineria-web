@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState, useCallback, useContext } from "react";
 import s from "@styles/GalleryGrid.module.css";
-
+import { appContext } from "../App";
 export interface GalleryImage {
   src: string;
   alt?: string;
@@ -43,6 +43,7 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
 
   // refs para observar cada imagen (reveal on view)
   const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const ctx = useContext(appContext)
 
   useEffect(() => {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
@@ -73,9 +74,14 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
   const openAt = useCallback((i: number) => {
     setIndex(i);
     setIsOpen(true);
+    ctx?.setImageOpen(true)
   }, []);
 
-  const close = useCallback(() => setIsOpen(false), []);
+  const close = useCallback(() => {
+    
+    setIsOpen(false) 
+    ctx?.setImageOpen(false)
+  }, []);
 
   const next = useCallback(() => {
     setIndex((i) => (i + 1) % images.length);

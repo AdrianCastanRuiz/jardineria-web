@@ -18,6 +18,8 @@ type AppContext = {
   setScroll: React.Dispatch<React.SetStateAction<boolean>>;
   popUpForm: boolean,
   setPopUpForm: React.Dispatch<React.SetStateAction<boolean>>;
+  imageOpen: boolean,
+  setImageOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export  const appContext = createContext<AppContext | null>(null)
@@ -27,14 +29,15 @@ const App: React.FC = () => {
 
   const [scroll, setScroll] = useState(false)
   const [popUpForm, setPopUpForm] = useState(false)
+  const [imageOpen, setImageOpen] = useState<boolean>(false)
   const mobile = useIsMobile(500)
 
   return (
     <>
-      <appContext.Provider value={{scroll, setScroll, popUpForm, setPopUpForm}}>
+      <appContext.Provider value={{scroll, setScroll, popUpForm, setPopUpForm, imageOpen, setImageOpen}}>
 
         <Header />
-        {mobile && <WhatsappIcon />}
+        {(mobile && !imageOpen ) && <WhatsappIcon />}
         <main id="main">
           <ScrollToTop />
           <Routes>
