@@ -27,14 +27,14 @@ const App: React.FC = () => {
 
   const [scroll, setScroll] = useState(false)
   const [popUpForm, setPopUpForm] = useState(false)
-  const mobile = useIsMobile()
+  const mobile = useIsMobile(500)
 
   return (
     <>
       <appContext.Provider value={{scroll, setScroll, popUpForm, setPopUpForm}}>
 
         <Header />
-        {useIsMobile(500) && <WhatsappIcon />}
+        {mobile && <WhatsappIcon />}
         <main id="main">
           <ScrollToTop />
           <Routes>
