@@ -116,6 +116,13 @@ header.sticky {
   border-bottom: 1px solid #1f2524;
 }
 
+.whatsapp-icon{
+  position: fixed;
+  top: 16%;
+  right: 10%;
+  z-index: 999999999;
+}
+
 @media (max-width: 768px) {
   .section {
     padding-top: 1rem;

@@ -10,6 +10,8 @@ import { createContext, useState } from "react";
 import LimpiezaPage from "./pages/LimpiezaPage";
 import RiegoPage from "./pages/RiegoPage";
 import PiscinesPage from "./pages/PiscinesPage";
+import WhatsappIcon from "@assets/icons/WhatsappIcon";
+import useIsMobile from "@hooks/useIsMobile";
 
 type AppContext = {
   scroll: boolean,
@@ -25,15 +27,15 @@ const App: React.FC = () => {
 
   const [scroll, setScroll] = useState(false)
   const [popUpForm, setPopUpForm] = useState(false)
+  const mobile = useIsMobile()
 
   return (
     <>
       <appContext.Provider value={{scroll, setScroll, popUpForm, setPopUpForm}}>
 
         <Header />
-
+        {useIsMobile(500) && <WhatsappIcon />}
         <main id="main">
-          {/* <SocialIcons /> */}
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />

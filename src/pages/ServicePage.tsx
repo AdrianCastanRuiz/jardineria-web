@@ -5,6 +5,8 @@ import s from "../styles/pages/ServicePage.module.css";
 import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { appContext } from "../App";
+import useLockBodyScroll from "@hooks/useStopScroll";
+
 
 
 
@@ -16,6 +18,7 @@ interface ServicePageProps {
 const ServicePage = ({ service, images }: ServicePageProps) => {
   const { t } = useI18n();
   const [popUp, setPopUp] = useState<boolean>(false)
+  useLockBodyScroll(popUp)
   const ctx = useContext(appContext)
 
   const closeForm = ()=>{
@@ -23,13 +26,7 @@ const ServicePage = ({ service, images }: ServicePageProps) => {
     ctx?.setPopUpForm(false)
   }
 
-  useEffect(()=>{
-    if(popUp){
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
-  },[popUp])
+ 
 
   return (
     <>
