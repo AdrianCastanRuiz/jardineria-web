@@ -185,9 +185,9 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
               ›
             </button>
 
-            <button className={s.closeBtn} onClick={close} aria-label="Cerrar">
+            {/* <button className={s.closeBtn} onClick={close} aria-label="Cerrar">
               ×
-            </button>
+            </button> */}
             {images[index]?.caption && (
               <div className={s.lbCaption}>{images[index].caption}</div>
             )}

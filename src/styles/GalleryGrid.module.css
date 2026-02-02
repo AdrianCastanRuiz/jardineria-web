@@ -40,8 +40,7 @@
 }
 
 /* estado inicial y cuando entra en viewport */
-.fade {
-}
+
 .in {
   opacity: 1;
 }
@@ -217,5 +216,9 @@
     width: 22px;
     height: 22px;
     font-size: 16px;
+  }
+  .closeBtn{
+    width: 25px;
+    height: 25px;
   }
 }
