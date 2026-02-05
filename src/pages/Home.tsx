@@ -13,6 +13,7 @@ import poda1 from "@assets/poda-tala/poda1.jpg";
 import { useEffect, useState, useContext } from "react";
 import { useLoaderData, useLocation } from "react-router";
 import { appContext } from "../App";
+import useLockBodyScroll from "@hooks/useStopScroll";
 
 
 const Home: React.FC = () => {
@@ -27,8 +28,12 @@ const Home: React.FC = () => {
 
   const { hash } = useLocation()
   const ctx = useContext(appContext)
+  useLockBodyScroll(false)
 
 
+useEffect(()=>{
+  ctx?.setPopUpForm(false)
+},[])
 
   useEffect(() => {
 
