@@ -6,7 +6,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PodaPage from "./pages/PodaPage";
 import MantenimientoPage from "./pages/MantenimientoPage";
 import ScrollToTop from "@components/ScrollToTop";
-import { createContext, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 import LimpiezaPage from "./pages/LimpiezaPage";
 import RiegoPage from "./pages/RiegoPage";
 import PiscinesPage from "./pages/PiscinesPage";
@@ -29,12 +29,17 @@ const App: React.FC = () => {
 
   const [scroll, setScroll] = useState(false)
   const [popUpForm, setPopUpForm] = useState(false)
-  const [imageOpen, setImageOpen] = useState<boolean>(false)
+  const [imageOpen, setImageOpen] = useState(false)
   const mobile = useIsMobile(500)
+
+  const ctxValue = useMemo(
+    ()=> ({scroll, setScroll, popUpForm, setPopUpForm, imageOpen, setImageOpen }),
+    [scroll, popUpForm, imageOpen]
+  )
 
   return (
     <>
-      <appContext.Provider value={{scroll, setScroll, popUpForm, setPopUpForm, imageOpen, setImageOpen}}>
+      <appContext.Provider value={ctxValue}>
 
         <Header />
         {(mobile && !imageOpen ) && <WhatsappIcon />}
