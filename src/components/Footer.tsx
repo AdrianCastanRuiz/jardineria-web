@@ -28,11 +28,10 @@ export const Footer: React.FC = () => {
             </a>
           </div>
 
-          {/* Redes sociales */}
           <div className={s.socialDiv} aria-label={t("footer.socialLabel") ?? "Social links"}>
             <a
               className={s.social}
-              href="https://www.instagram.com/tu_usuario"
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -44,7 +43,7 @@ export const Footer: React.FC = () => {
 
             <a
               className={s.social}
-              href="https://www.facebook.com/tu_pagina"
+              href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

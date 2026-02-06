@@ -6,6 +6,7 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 import { Link } from 'react-router-dom'
 import { appContext } from '../App'
 import { useContext } from 'react'
+import useLockBodyScroll from '@hooks/useStopScroll'
 
 
 export const Header: React.FC = () => {
@@ -13,7 +14,7 @@ export const Header: React.FC = () => {
   const [open, setOpen] = useState(false)
   const sheetRef = useRef<HTMLDivElement | null>(null)
   const ctx = useContext(appContext)
-
+  useLockBodyScroll(open)
   const handleLinkClick = (e: any) => {
  
     ctx?.setScroll(!ctx?.scroll)
